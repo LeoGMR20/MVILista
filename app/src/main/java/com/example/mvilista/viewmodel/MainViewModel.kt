@@ -36,6 +36,7 @@ class MainViewModel(private val repo: CartoonRepo): ViewModel() {
                 }
             }
         }
+
     }
 
     private fun fetchCartoons() {
