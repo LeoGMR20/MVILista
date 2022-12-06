@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.example.mvilista.R
 import com.example.mvilista.api.CartoonService
 import com.example.mvilista.model.Cartoon
+import kotlinx.android.synthetic.main.cartoon_item.view.*
 
 /*  1) Necesita heredar de la calse adpater
         pero Adapter de un RecyclerView
@@ -20,8 +21,16 @@ import com.example.mvilista.model.Cartoon
     4) Los métodos a implemntar refieren
         mucho al tratamiento con el ViewHolder
 */
-class CartoonListAdapter(private val cartoons: List<Cartoon>):
+class CartoonListAdapter(private val cartoons: ArrayList<Cartoon>):
 RecyclerView.Adapter<CartoonListAdapter.DataViewHolder>(){
+
+    //Método forzado para explicar las actualizaciones del adapter
+    fun newCartoons(newCartoons: List<Cartoon>) {
+        cartoons.clear()
+        cartoons.addAll(newCartoons)
+        //método noticfica de cambios al adaptador para que redibuje o actualica sus items
+        notifyDataSetChanged()
+    }
     //Patrón ViewHolder para el adapter
     //necesitas la referencia de la View o Layout
     //que se supone vas a mapear

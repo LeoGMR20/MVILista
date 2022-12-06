@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MVILista</string>
     <string name="txt_imagen">Imagen</string>
+    <string name="btn_cartoon">Fetch cartoons</string>
 </resources>
