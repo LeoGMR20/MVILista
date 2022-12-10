@@ -1,9 +1,9 @@
 package com.example.mvilista
 
-import android.arch.lifecycle.ViewModelProvider
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setupUI()
+        initializeViewModel()
         //la vista recibe un estado luego de la interacción desde viewModel
         //la vista tiene que en base a ese estado cambiar algo visual
         setupStatesToView()
